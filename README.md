@@ -7,7 +7,10 @@
 ```swift
 // 开始测速
 NetSpeed.shared.delegate = self
+// 默认1秒更新一次
 NetSpeed.shared.begin()
+// 自定义刷新时间
+NetSpeed.shared.begin(duration: 2)
 ```
 
 ```swift
