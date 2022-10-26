@@ -15,8 +15,10 @@
     "git": "https://github.com/luke/NetSpeed.git",
     "tag": "0.1.0"
   },
+  "swift_versions": "5.0",
   "platforms": {
-    "ios": "10.0"
+    "ios": "11.0"
   },
-  "source_files": "NetSpeed/Classes/**/*"
+  "source_files": "NetSpeed/Classes/**/*",
+  "swift_version": "5.0"
 }

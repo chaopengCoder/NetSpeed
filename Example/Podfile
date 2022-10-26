@@ -1,13 +1,7 @@
 use_frameworks!
 
-platform :ios, '10.0'
+platform :ios, '11.0'
 
 target 'NetSpeed_Example' do
   pod 'NetSpeed', :path => '../'
-
-  target 'NetSpeed_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end

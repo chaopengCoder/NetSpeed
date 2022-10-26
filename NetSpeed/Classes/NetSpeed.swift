@@ -7,11 +7,11 @@
 
 import Foundation
 
-class WSNetSpeed {
+public class NetSpeed {
     /// 单例
-    static let shared = WSNetSpeed()
+    public static let shared = NetSpeed()
     // 代理
-    weak var delegate: WSNetSpeedProtocol?
+    public weak var delegate: NetSpeedProtocol?
     
     /// 定时器
     private var timer: Timer?
@@ -30,7 +30,7 @@ class WSNetSpeed {
     
     /// 开始测速
     /// - Parameter duration: 每'duration'秒测一次
-    func begin(duration: Int = 1) {
+    public func begin(duration: Int = 1) {
         self.duration = duration
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(duration),
                                      target: self,
@@ -42,7 +42,7 @@ class WSNetSpeed {
     }
     
     /// 停止测速
-    func stop() {
+    public func stop() {
         timer?.invalidate()
         timer = nil
     }
@@ -64,10 +64,12 @@ class WSNetSpeed {
         // 第一次不回调
         if isNotFirstTime {
             let sent = (sentOctets &- lastSentOctets) / UInt32(duration)
-            delegate?.didSent(octets: sent)
-            
             let received = (receivedOctets &- lastReceivedOctets) / UInt32(duration)
-            delegate?.didReceived(octets: received)
+            DispatchQueue.main.async { [weak self] in
+                guard let `self` = self else { return }
+                self.delegate?.didSent(octets: sent)
+                self.delegate?.didReceived(octets: received)
+            }
         } else {
             isNotFirstTime = true
         }
@@ -79,7 +81,7 @@ class WSNetSpeed {
     }
 }
 
-protocol WSNetSpeedProtocol: AnyObject {
+public protocol NetSpeedProtocol: AnyObject {
     func didSent(octets: UInt32)
     func didReceived(octets: UInt32)
 }
