@@ -1,0 +1,6 @@
+framework module Pods_NetSpeed_Tests {
+  umbrella header "Pods-NetSpeed_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

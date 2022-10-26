@@ -1,0 +1,6 @@
+framework module NetSpeed {
+  umbrella header "NetSpeed-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "NetSpeed",
+  "version": "0.1.0",
+  "summary": "A short description of NetSpeed.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/luke/NetSpeed",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "luke": "luke.ren@hehemobi.com"
+  },
+  "source": {
+    "git": "https://github.com/luke/NetSpeed.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "NetSpeed/Classes/**/*"
+}

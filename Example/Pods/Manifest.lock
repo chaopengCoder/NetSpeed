@@ -1,0 +1,16 @@
+PODS:
+  - NetSpeed (0.1.0)
+
+DEPENDENCIES:
+  - NetSpeed (from `../`)
+
+EXTERNAL SOURCES:
+  NetSpeed:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  NetSpeed: d26a0f657d6cd6dbe606e211fd1334c630ee7f0c
+
+PODFILE CHECKSUM: 07d070476e1b0746ee69a47f92e4ab709dfd27bd
+
+COCOAPODS: 1.11.3
