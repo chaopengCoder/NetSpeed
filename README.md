@@ -11,6 +11,7 @@ NetSpeed.shared.begin()
 ```
 
 ```swift
+// 停止测速
 NetSpeed.shared.stop()
 ```
 
