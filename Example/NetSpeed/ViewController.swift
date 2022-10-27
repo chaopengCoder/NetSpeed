@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  NetSpeed
 //
-//  Created by luke on 10/26/2022.
-//  Copyright (c) 2022 luke. All rights reserved.
+//  Created by CPCoder on 10/26/2022.
+//  Copyright (c) 2022 CPCoder. All rights reserved.
 //
 
 import UIKit

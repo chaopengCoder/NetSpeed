@@ -2,12 +2,12 @@
 //  NetSpeed.swift
 //  WapeSpeed
 //
-//  Created by HeHeMobi on 23/9/2022.
+//  Created by CPCoder on 23/9/2022.
 //
 
 import Foundation
 
-@objc public class NetSpeed {
+@objc public class NetSpeed: NSObject {
     /// 单例
     @objc public static let shared = NetSpeed()
     // 代理
@@ -27,6 +27,10 @@ import Foundation
     private var lastSentOctets: UInt32 = 0
     /// 最后一次接收的八位字节数
     private var lastReceivedOctets: UInt32 = 0
+    
+    @objc public override init() {
+        super.init()
+    }
     
     /// 开始测速
     /// - Parameter duration: 每'duration'秒测一次
