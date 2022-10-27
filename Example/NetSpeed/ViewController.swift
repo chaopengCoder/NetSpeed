@@ -62,7 +62,7 @@ class ViewController: UIViewController {
     @objc func beginAction() {
         // 开始测速
         NetSpeed.shared.delegate = self
-        NetSpeed.shared.begin()
+        NetSpeed.shared.begin(duration: 2)
     }
     
     @objc func stopAction() {
@@ -74,7 +74,6 @@ extension ViewController: NetSpeedProtocol {
     
     func didSent(octets: UInt32) {
         iSentLb.text = "upload \(formatSpeed(octets: octets))"
-        
     }
     
     func didReceived(octets: UInt32) {

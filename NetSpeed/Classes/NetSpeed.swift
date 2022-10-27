@@ -7,11 +7,11 @@
 
 import Foundation
 
-public class NetSpeed {
+@objc public class NetSpeed {
     /// 单例
-    public static let shared = NetSpeed()
+    @objc public static let shared = NetSpeed()
     // 代理
-    public weak var delegate: NetSpeedProtocol?
+    @objc public weak var delegate: NetSpeedProtocol?
     
     /// 定时器
     private var timer: Timer?
@@ -30,7 +30,7 @@ public class NetSpeed {
     
     /// 开始测速
     /// - Parameter duration: 每'duration'秒测一次
-    public func begin(duration: Int = 1) {
+    @objc public func begin(duration: Int = 1) {
         self.duration = duration
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(duration),
                                      target: self,
@@ -42,7 +42,7 @@ public class NetSpeed {
     }
     
     /// 停止测速
-    public func stop() {
+    @objc public func stop() {
         timer?.invalidate()
         timer = nil
     }
@@ -81,7 +81,7 @@ public class NetSpeed {
     }
 }
 
-public protocol NetSpeedProtocol: AnyObject {
+@objc public protocol NetSpeedProtocol: AnyObject {
     func didSent(octets: UInt32)
     func didReceived(octets: UInt32)
 }
